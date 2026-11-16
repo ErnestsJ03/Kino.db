@@ -52,6 +52,96 @@ try:
         )
     """)
 
+
+    # Izveidot zanru tabulu.
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS genre(
+            genre_id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL UNIQUE
+        )
+    """)
+
+    # Izveidot rezisoru tabulu.
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS director(
+            director_id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL
+        )
+    """)
+
+    # Izveidot aktieru tabulu.
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS actor(
+            actor_id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL
+        )
+    """)
+
+    # Pievienot zanra un rezisora ID filmu tabulai.
+    movie_columns = [
+        row[1] for row in cursor.execute(
+            "PRAGMA table_info(movie)"
+        ).fetchall()
+    ]
+
+    if "genre_id" not in movie_columns:
+        cursor.execute("""
+            ALTER TABLE movie ADD COLUMN genre_id INTEGER
+            REFERENCES genre(genre_id)
+        """)
+
+    if "director_id" not in movie_columns:
+        cursor.execute("""
+            ALTER TABLE movie ADD COLUMN director_id INTEGER
+            REFERENCES director(director_id)
+        """)
+
+    # Izveidot filmu un aktieru saistibas tabulu.
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS movie_actor(
+            movie_id INTEGER,
+            actor_id INTEGER,
+            PRIMARY KEY(movie_id, actor_id),
+            FOREIGN KEY(movie_id) REFERENCES movie(movie_id)
+                ON DELETE CASCADE,
+            FOREIGN KEY(actor_id) REFERENCES actor(actor_id)
+                ON DELETE CASCADE
+        )
+    """)
+
+    # Izveidot komentaru tabulu.
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS comments(
+            comment_id INTEGER PRIMARY KEY,
+            review_id INTEGER NOT NULL,
+            user_id INTEGER NOT NULL,
+            comment_text TEXT NOT NULL,
+            FOREIGN KEY(review_id) REFERENCES reviews(review_id)
+                ON DELETE CASCADE,
+            FOREIGN KEY(user_id) REFERENCES users(user_id)
+                ON DELETE CASCADE
+        )
+    """)
+
+    # Izveidot skatamo filmu saraksta tabulu.
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS watchlist(
+            watchlist_id INTEGER PRIMARY KEY,
+            user_id INTEGER NOT NULL,
+            movie_id INTEGER NOT NULL,
+            UNIQUE(user_id, movie_id),
+            FOREIGN KEY(user_id) REFERENCES users(user_id)
+                ON DELETE CASCADE,
+            FOREIGN KEY(movie_id) REFERENCES movie(movie_id)
+                ON DELETE CASCADE
+        )
+    """)
+
+
+
+
+
+
     # Pievienot filmas.
     cursor.execute("""
         INSERT OR IGNORE INTO movie(movie_id, title)
