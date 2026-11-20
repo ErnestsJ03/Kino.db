@@ -1,19 +1,19 @@
 # Kino.db – Kino datubāzes pārvaldības sistēma
 
-1. Projekta apraksts
+### 1. Projekta apraksts
 
 Kino.db ir Python valodā izstrādāta kino datubāzes pārvaldības sistēma, kas izmanto SQLite datubāzi. Projekts paredzēts filmu, lietotāju, vērtējumu, atsauksmju un citas ar kino saistītas informācijas uzglabāšanai un pārvaldībai.
 
 Lietotne nodrošina datu pievienošanu, apskati, meklēšanu, rediģēšanu un dzēšanu, izmantojot grafisko lietotāja saskarni.
 
-2. Izmantotās tehnoloģijas
+### 2. Izmantotās tehnoloģijas
 Python 3.x – lietotnes izstrāde.
 SQLite3 – datu glabāšana un pārvaldība.
 Tkinter – grafiskā lietotāja saskarne (ja izmantots projektā).
 SQL – datubāzes vaicājumi.
 Visual Studio Code – izstrādes vide.
 
-3. Projekta struktūra
+### 3. Projekta struktūra
 
 Kino.db/
 │
@@ -24,7 +24,7 @@ Kino.db/
 ├── terminal.py           # Termināļa funkcionalitāte
 └── README.md             # Projekta dokumentācija
 
-4. Datubāzes struktūra
+### 4. Datubāzes struktūra
 
 Projektā tiek izmantota SQLite relāciju datubāze, kurā izveidotas 10 tabulas:
 
@@ -49,7 +49,7 @@ Katram lietotājam ir savs skatāmo filmu saraksts.
 
 Datubāzē tiek izmantotas primārās un ārējās atslēgas, kā arī UNIQUE, NOT NULL un CHECK ierobežojumi datu integritātes nodrošināšanai.
 
-5. Lietotnes funkcionalitāte
+### 5. Lietotnes funkcionalitāte
 
 Grafiskajā saskarnē pieejamas šādas sadaļas:
 
@@ -70,7 +70,8 @@ Ierakstu meklēšana.
 Informācijas rediģēšana un dzēšana.
 Filmu vērtējumu un atsauksmju pārvaldība.
 Datu saglabāšana SQLite datubāzē.
-6. Projekta uzstādīšana un palaišana
+
+### 6. Projekta uzstādīšana un palaišana
 Prasības
 Instalēts Python 3.x.
 Visual Studio Code vai cita Python izstrādes vide.
@@ -106,7 +107,7 @@ bash
 py main.py
 py app.py
 
-7. Datubāzes pieslēgšana
+### 7. Datubāzes pieslēgšana
 
 Savienojums ar SQLite datubāzi tiek izveidots, izmantojot Python sqlite3 moduli.
 
@@ -124,14 +125,15 @@ database.execute("PRAGMA foreign_keys = ON")
 Datubāzes izmaiņas tiek saglabātas ar database.commit(), bet savienojums pēc darbību pabeigšanas tiek aizvērts ar database.close().
 
 
-8. Datu drošība un iespējamās problēmas
+### 8. Datu drošība un iespējamās problēmas
 Regulāri veidot datubāzes faila rezerves kopijas.
 Izmantot parametrizētus SQL vaicājumus.
 Pārbaudīt ievadīto datu pareizību.
 Pārliecināties, ka datubāzes faila nosaukums kodā atbilst faktiskajam failam.
 Pēc datu izmaiņām izpildīt database.commit().
 Pārbaudīt ārējo atslēgu ierobežojumus, ja rodas datu savienošanas kļūdas.
-9. Projekta autors
+
+### 9. Projekta autors
 
 Ernests J.
 
