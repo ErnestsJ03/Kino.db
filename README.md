@@ -1,4 +1,4 @@
-#Kino.db – Kino datubāzes pārvaldības sistēma
+# Kino.db – Kino datubāzes pārvaldības sistēma
 
 1. Projekta apraksts
 
