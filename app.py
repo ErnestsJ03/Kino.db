@@ -15,9 +15,9 @@ from funkcijas import (
 )
 
 
-# =====================================
+
 # COLOUR SCHEME
-# =====================================
+
 
 BG = "#172337"
 PANEL = "#22344D"
@@ -34,9 +34,8 @@ FONT = ("Arial", 10)
 BOLD_FONT = ("Arial", 10, "bold")
 
 
-# =====================================
+
 # WINDOW
-# =====================================
 
 window = tk.Tk()
 window.title("Kino datubāze")
@@ -45,9 +44,9 @@ window.minsize(800, 600)
 window.configure(bg=BG)
 
 
-# =====================================
+
 # STYLES
-# =====================================
+
 
 style = ttk.Style()
 style.theme_use("clam")
@@ -75,9 +74,9 @@ style.map(
 style.configure("TFrame", background=BG)
 
 
-# =====================================
+
 # DESIGN FUNCTIONS
-# =====================================
+
 
 def create_label(parent, text):
     return tk.Label(
@@ -161,9 +160,9 @@ def create_form(parent, title, fields, buttons):
     return entries
 
 
-# =====================================
+
 # DATABASE FUNCTIONS
-# =====================================
+
 
 def connect_database():
     database = sqlite3.connect("Kino_skola.db")
@@ -237,9 +236,9 @@ def add_simple_record(
         show_message(str(error), ERROR)
 
 
-# =====================================
+
 # MOVIES
-# =====================================
+
 
 def addFromWindow():
     name = movie_input.get().strip()
@@ -269,9 +268,9 @@ def showMovies():
     )
 
 
-# =====================================
+
 # USERS
-# =====================================
+
 
 def addFromWindow2():
     name = user_input.get().strip()
@@ -296,9 +295,9 @@ def showUsers():
     show_data("ID | Lietotājvārds", get_users())
 
 
-# =====================================
+
 # REVIEWS
-# =====================================
+
 
 def addFromWindow3():
     try:
@@ -350,9 +349,8 @@ def showGenres():
     )
 
 
-# =====================================
 # DIRECTORS
-# =====================================
+
 
 def addDirector():
     add_simple_record(
