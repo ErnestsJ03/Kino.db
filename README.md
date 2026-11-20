@@ -14,7 +14,7 @@ SQL – datubāzes vaicājumi.
 Visual Studio Code – izstrādes vide.
 
 3. Projekta struktūra
-text
+
 Kino.db/
 │
 ├── app.py                # Grafiskā lietotāja saskarne
