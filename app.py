@@ -237,7 +237,7 @@ def add_simple_record(
 
 
 
-# MOVIES
+# MOVIES filma 1 
 
 
 def addFromWindow():
@@ -633,7 +633,7 @@ review_input = review_fields["review_input"]
 
 # =====================================
 # GENRES TAB
-# =====================================
+
 
 genre_fields = create_form(
     genre_tab,
@@ -650,9 +650,9 @@ genre_fields = create_form(
 genre_input = genre_fields["genre_input"]
 
 
-# =====================================
+
 # DIRECTORS TAB
-# =====================================
+ 
 
 director_fields = create_form(
     director_tab,
@@ -669,9 +669,9 @@ director_fields = create_form(
 director_input = director_fields["director_input"]
 
 
-# =====================================
+
 # ACTORS TAB
-# =====================================
+
 
 actor_fields = create_form(
     actor_tab,
@@ -688,9 +688,8 @@ actor_fields = create_form(
 actor_input = actor_fields["actor_input"]
 
 
-# =====================================
 # MOVIE ACTORS TAB
-# =====================================
+
 
 movie_actor_fields = create_form(
     movie_actor_tab,
@@ -714,9 +713,8 @@ movie_actor_actor_input = movie_actor_fields[
 ]
 
 
-# =====================================
 # COMMENTS TAB
-# =====================================
+
 
 comment_fields = create_form(
     comment_tab,
@@ -745,9 +743,9 @@ comment_input = comment_fields[
 ]
 
 
-# =====================================
+
 # WATCHLIST TAB
-# =====================================
+
 
 watchlist_fields = create_form(
     watchlist_tab,
@@ -771,9 +769,9 @@ watch_movie_input = watchlist_fields[
 ]
 
 
-# =====================================
+
 # STATUS MESSAGE
-# =====================================
+
 
 result = tk.Label(
     window,
@@ -786,9 +784,9 @@ result = tk.Label(
 result.pack(pady=5)
 
 
-# =====================================
+
 # OUTPUT AREA
-# =====================================
+
 
 output = tk.Text(
     window,
@@ -812,9 +810,8 @@ output.pack(
 )
 
 
-# =====================================
+
 # START APPLICATION
-# =====================================
 
 showMovies()
 
